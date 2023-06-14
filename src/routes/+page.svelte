@@ -1,7 +1,7 @@
 <script lang="ts">
-	
-	import ConnaissancesCanvas from '$lib/components/ConnaissancesCanvas.svelte';
-import '@skeletonlabs/skeleton/styles/skeleton.css';
+	import Connaissances from '$lib/components/Connaissances.svelte';
+import ConnaissancesCanvas from '$lib/components/ConnaissancesCanvas.svelte';
+	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import { Canvas } from '@threlte/core';
 	
 </script>
@@ -19,11 +19,19 @@ import '@skeletonlabs/skeleton/styles/skeleton.css';
 	
 	<hr class="!border-t-4" />
 
-	<div class="flex flex-col-gap-6 w-full">
-		<h1 class="h1">Connaissances</h1>
-		<Canvas>
-			<ConnaissancesCanvas />
-		</Canvas>
+	<div class="flex flex-col gap-6">
+		<div class="grid grid-auto-rows gap-10">
+			
+			<div class="h-[10vh]">
+				<h1 class="h1">Connaissances</h1>
+			</div>
+	
+			<div>
+				<Connaissances />
+			</div>
+			
+		</div>
+		
 	</div>
 </div>
 
