@@ -42,7 +42,7 @@
     </T.PerspectiveCamera>-->
 
     <T.PerspectiveCamera makeDefault position={[0, cameraHeight, 0]} fov={20}>
-        <OrbitControls enabled={true} target={{ y:0, x:0, z:0 }} enableDamping={true}/>
+        <OrbitControls enabled={false} target={{ y:0, x:0, z:0 }} enableDamping={true}/>
     </T.PerspectiveCamera>
 
     <!--<Pass pass={new UnrealBloomPass(new Vector2(10,10), 10, 109, 2)}/>-->

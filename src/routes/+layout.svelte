@@ -1,12 +1,23 @@
 <script lang='ts'>
 	// The ordering of these imports is critical to your app working properly
-	import '@skeletonlabs/skeleton/themes/theme-crimson.css';
+	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 	// If you have source.organizeImports set to true in VSCode, then it will auto change this ordering
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	// Most of your app wide CSS should be put in this file
 	import '../app.postcss';
-	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
-	import AppBarContent from '$lib/components/AppBarContent.svelte';
+	import { AppBar, AppShell, Tab, TabGroup } from '@skeletonlabs/skeleton';
+	import { intersectionStore } from '$lib/stores/IntersectionStore';
+	import type { IntersectionValues } from "$lib/Utils";
+
+	let intersection:IntersectionValues 
+
+	intersectionStore.subscribe((value)=>{
+		intersection = value
+	})
+
+	let tabSet:number;
+
+
 </script>
 
 
@@ -15,17 +26,17 @@
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
 			<svelte:fragment slot="lead">(icon)</svelte:fragment>
 			<div class="w-full flex flex-row justify-center gap-20">
-				<button type="button" class="btn !bg-transparent">
-					<span>Qui suis-je?</span>
+				<button class:intersecting={$intersectionStore.whois} type="button" class="btn  btn-lg hover:intersecting">
+					<a href="#Whois">Qui suis-je?</a>
 				</button>
-				<button type="button" class="btn !bg-transparent">
-					<span>Expérience</span>
+				<button class:intersecting={$intersectionStore.exp} type="button" class="btn btn-lg bg-initial hover:variant-filled-primary">
+					<a href="#Experience">Expérience</a>
 				</button>
-				<button type="button" class="btn !bg-transparent">
-					<span>Éducation</span>
+				<button class:intersecting={$intersectionStore.education} type="button" class="btn btn-lg bg-initial hover:variant-filled-primary">
+					<a href="#Education">Éducation</a>
 				</button>
-				<button type="button" class="btn !bg-transparent">
-					<span>Connaissances</span>
+				<button class:intersecting={$intersectionStore.connaissances} type="button" class="btn btn-lg bg-initial hover:variant-filled-primary border-surface-900-50-token">
+					<a href="#Connaissances">Connaissances</a>
 				</button>
 			</div>
 			<svelte:fragment slot="trail">(actions)</svelte:fragment>
@@ -36,7 +47,16 @@
 	<!-- Router Slot -->
 	<slot />
 	<!-- ---- / ---- -->
-	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>
+	<svelte:fragment slot="pageFooter">
+		
+	</svelte:fragment>
 	<!-- (footer) -->
 </AppShell>
 
+<style>
+	.intersecting{
+		--tw-bg-opacity: 1;
+    	background-color: rgb(var(--color-primary-500) / var(--tw-bg-opacity));
+    	color: rgb(var(--on-primary))
+	}
+</style>

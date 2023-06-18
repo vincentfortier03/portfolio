@@ -40,9 +40,9 @@
     </div>
    
 <div class="flex flex-col justify-center border-white p-10 w-2/4">
-    <div class="card p-8 variant-ringed-surface h-1/2 {logoPaper}">
+    <div class="card p-8 variant-glass-surface h-1/2 {logoPaper}">
         <div class="grid grid-cols-1 w-full h-full">
-            <h1 class="h1">{name}</h1>
+            <h1 class="h1 font-black">{name}</h1>
             <p class="p1">{description}</p>
             
         </div>
