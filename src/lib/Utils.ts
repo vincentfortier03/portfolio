@@ -21,3 +21,12 @@ export type ConnaissancesIntersection = {
     css: boolean,
     ts: boolean
 }
+
+export type connaissancesElementProps = {
+    name: string,
+    description: string,
+    modelName: string,
+    reverse: boolean,
+    logoScale: number,
+    cameraHeight: number
+}

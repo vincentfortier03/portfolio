@@ -16,3 +16,29 @@ html,
 body {
 	@apply h-full overflow-hidden;
 }
+
+body{
+	--bg-animation-speed: 20s;
+	background-color:hsla(227,31%,21%,1);
+	background-image:
+		radial-gradient(at 53% 66%, hsla(227,31%,21%,1) 0px, transparent 50%),
+		radial-gradient(at 39% 62%, hsla(198,100%,24%,0.49) 0px, transparent 50%),
+		radial-gradient(at 100% 99%, hsla(198,89%,48%,0.38) 0px, transparent 50%),
+		radial-gradient(at 97% 0%, hsla(160,87%,34%,0.46) 0px, transparent 50%),
+		radial-gradient(at 2% 99%, hsla(240,73%,56%,0.23) 0px, transparent 50%);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 400%;
+	animation: bg-animation var(--bg-animation-speed) infinite alternate;
+}
+
+@keyframes bg-animation {
+	0% {
+		background-position: left;
+	}
+
+	100% {
+		background-position: right;
+	}
+}

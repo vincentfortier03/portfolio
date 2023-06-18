@@ -7,7 +7,7 @@
 	import '../app.postcss';
 	import { AppBar, AppShell, Tab, TabGroup } from '@skeletonlabs/skeleton';
 	import { intersectionStore } from '$lib/stores/IntersectionStore';
-	import type { IntersectionValues } from "$lib/Utils";
+	import type { IntersectionValues, MousePosition } from "$lib/Utils";
 
 	let intersection:IntersectionValues 
 
@@ -17,11 +17,20 @@
 
 	let tabSet:number;
 
+	let timestamp = 0;
+	let mY = 0;
+	
+	
+	function handleScroll(){
+		console.log("scrolled")
+	}
+
 
 </script>
 
+<svelte:document on:scroll={()=>{handleScroll()}} />
 
-<AppShell>
+<AppShell >
 	<svelte:fragment slot="header">
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
 			<svelte:fragment slot="lead">(icon)</svelte:fragment>
