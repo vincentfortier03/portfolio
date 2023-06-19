@@ -14,8 +14,6 @@ const config = {
 		expiration: 60
 	},
 
-	runtime: 'edge',
-
 	vitePlugin: {
 		inspector: true,
 	},
