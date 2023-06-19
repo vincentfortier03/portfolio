@@ -16902,7 +16902,7 @@ const ElementCanvas = create_ssr_component(($$result, $$props, $$bindings, slots
   let { modelName } = $$props;
   let { logoScale } = $$props;
   let { cameraHeight } = $$props;
-  const modelPath = "src/lib/models/" + modelName + ".glb";
+  const modelPath = "models/" + modelName + ".glb";
   const { gltf } = useGltf(modelPath);
   $$unsubscribe_gltf = subscribe(gltf, (value) => $gltf = value);
   console.log(mousePosition.x);

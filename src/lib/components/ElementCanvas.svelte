@@ -12,7 +12,7 @@
     export let logoScale:number;
     export let cameraHeight:number;
 
-    const modelPath:string = 'src/lib/models/' + modelName + '.glb'
+    const modelPath:string = 'models/' + modelName + '.glb'
 
     const { gltf } = useGltf(modelPath)
 
