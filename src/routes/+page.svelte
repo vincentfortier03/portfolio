@@ -10,8 +10,6 @@
 	import { browser } from '$app/environment';
 	import ExperienceComponent from '$lib/components/ExperienceComponent.svelte';
 	
-	
-	
 	let whoIsElement:HTMLElement;
 	let expElement:HTMLElement;
 	let educationElement:HTMLElement;

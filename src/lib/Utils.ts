@@ -30,3 +30,12 @@ export type connaissancesElementProps = {
     logoScale: number,
     cameraHeight: number
 }
+
+export type ExperienceProps = {
+    imageSRC: string,
+    imageH: string,
+    imageAlt: string,
+    title: string,
+    description: string,
+    compagnie: string
+}

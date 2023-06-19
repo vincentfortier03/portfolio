@@ -1,14 +1,21 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 import preprocess from 'svelte-preprocess'
 import seqPreprocessor from 'svelte-sequential-preprocessor'
 import { preprocessThrelte } from '@threlte/preprocess'
 
 
-/** @type {import('@sveltejs/kit').Config} */
+/** @type {import('@sveltejs/adapter-vercel').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: seqPreprocessor([preprocess(), preprocessThrelte()]),
+
+	isr: {
+		expiration: 60,
+		bypassToken: 'REPLACE_ME_WITH_SECRET_VALUE',
+	},
+
+	runtime: 'edge',
 
 	vitePlugin: {
 		inspector: true,
