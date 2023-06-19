@@ -11,8 +11,7 @@ const config = {
 	preprocess: seqPreprocessor([preprocess(), preprocessThrelte()]),
 
 	isr: {
-		expiration: 60,
-		bypassToken: 'REPLACE_ME_WITH_SECRET_VALUE',
+		expiration: 60
 	},
 
 	runtime: 'edge',
